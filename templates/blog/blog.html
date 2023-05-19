@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% load static %}
+    {%block content%}
+<head><style>
+body {background-color:#F5F0EA;
+  padding: 20px;
+}
+h1{font-family: cursive;
+   color:#454241 ;
+   text-align: center;
+}
+* {
+  box-sizing: border-box;
+  text-align: center;
+
+}
+
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: #F9F7F5;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.center{font-family: Courier New, Helvetica, sans-serif;
+  float: center;
+    text-align: center;
+  width: 75%;
+
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #F9F7F5;
+    padding: 20px;
+  margin-top: 20px;
+  margin-left: 400px;
+    margin-right: 20px;
+}
+
+/* Clear floats after the columns */
+.row {  text-align: center;
+  clear: both;
+}
+img {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  high:40%
+}
+img:hover {
+  transform: scaleX(-1);
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}</style></head>
+<body>
+
+<div class="header">
+  <h1>Fatimah Blog</h1>
+</div>
+{%for x in post.all%}
+<div class="row">
+  <div class="center">
+    <div class="card">
+      <h2>{{x.title}}</h2>
+      <p>{{x.text}}</p>
+         <h5>{{x.date }}</h5>
+       <div class="pic16">  <img src="{{ x.image.url}}" alt="{{ post.title }}"></div>
+    </div>
+  </div>
+  </div>
+      {% endfor%}
+
+</body>
+    {% endblock %}

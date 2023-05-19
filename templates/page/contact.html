@@ -1,0 +1,102 @@
+
+{% extends 'base.html'%}
+{% block content %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif; background-color:#F5F0EA;
+  padding: 20px;}
+
+h1{font-family: cursive;
+   color:#454241 ;
+   text-align: center;
+}
+* {box-sizing: border-box;}
+
+input[type=text], textarea {
+  font-family: Courier New;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+label{font-family: Monaco;}
+
+
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+
+  font-size: 16px;
+
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{text-align: center;
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Contact Form</h1>
+
+<div class="container">
+  <form id="contact-form" name="contact-form" action="{% url 'contact' %}" method="POST">
+
+      {% csrf_token %}
+
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your Name" >
+<br>
+    <label for="email">Email </label><br>
+    <input type="text" id="email" name="email" placeholder="Enter a valid email address" >
+<br>
+    <label for="subject">Subject</label><br>
+    <input type="text" id="subject" name="subject"><br>
+
+    <label>Message</label><br>
+    <textarea type="text" id="message" name="message" placeholder="Enter your Message" style="height:150px"></textarea>
+  <br>
+{% load static %}
+   <button class="button-89" onclick="document.getElementById('contact-form').submit();">Send</button>
+</form>
+
+</div>
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+
+{% extends 'base.html'%}
+{% load static %}
+    {%block content%}
+<html><head>
+
+    <style>
+    body {background-color:#F5F0EA;
+  padding: 20px;
+  lead{font-family="Blippo, fantasy"}
+      body{background-color: #F5F0EA }
+      big-name{
+      font-family="Arial, sans-serif"
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+  </head>
+  <body class="d-flex h-100 text-center ">
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="px-3">
+    <h1 class="big-name">Fatimah Shawoosh</h1><br>
+    <p class="lead">A fashion and jewelry designer who loves art in all its fields, she was born in a family inherited a creative <br> sense in how to make elaborate pieces from jewelry and ornaments to elegant dresses, <br>and her family is known in the region (Daqqa Al-Shawoosh) and it was important that the bride has a piece of Shawoosh Daqqa.</p>
+      <img src="{% static 'pages/image/home1.jpeg' %}"  style="width 300px;height:300px;">
+      <img src="{% static 'pages/image/home2.jpeg' %}"  style="width:300px;height:300px;">
+      <img src="{% static 'pages/image/home3.jpeg' %}"  style="width:300px;height:300px;"><br><br>
+  </main>
+</div>
+
+  </body>
+</html>
+    {% endblock content%}
+

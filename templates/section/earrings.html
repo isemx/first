@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load static %}
+    {%block content%}
+<head>
+    <style>
+   * {box-sizing: border-box;
+}
+body {background-color:#F5F0EA;
+  padding: 20px;}
+
+content{ padding-left: 50px;}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+h2{  text-align: center;
+ padding:20px}
+    </style>
+</head>
+<body>
+<h2>My Collection of Earrings</h2>
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="{% static 'pages/image/ear1.jpeg'%}" style="width:80%">
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="{% static 'pages/image/ear2.jpeg' %}" style="width:80%">
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="{% static 'pages/image/ear3.jpeg' %}"  style="width:80%">
+    </div>
+  </div>
+</div>
+</body>
+    {% endblock %}
+
+
